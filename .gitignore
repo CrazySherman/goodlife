@@ -2,6 +2,7 @@
 local/
 logs/
 3rd-party/
+*.ipynb
 
 # data files
 data/
