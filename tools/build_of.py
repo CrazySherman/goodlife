@@ -91,10 +91,10 @@ if __name__ == '__main__':
     parser.add_argument("--df_path", type=str, default='./lib/dense_flow/', help='path to the dense_flow toolbox')
     parser.add_argument("--out_format", type=str, default='dir', choices=['dir','zip'],
                         help='path to the dense_flow toolbox')
-    parser.add_argument("--ext", type=str, default='avi', choices=['avi','mp4'], help='video file extensions')
+    parser.add_argument("--ext", type=str, default='avi', choices=['avi','mp4','MP4'], help='video file extensions')
     parser.add_argument("--new_width", type=int, default=0, help='resize image width')
     parser.add_argument("--new_height", type=int, default=0, help='resize image height')
-    parser.add_argument("--num_gpu", type=int, default=8, help='number of GPU')
+    parser.add_argument("--num_gpu", type=int, default=4, help='number of GPU')
 
     args = parser.parse_args()
 
