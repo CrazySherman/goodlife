@@ -24,9 +24,14 @@ done
 ```
 
 ```
-python tools/build_file_list.py --dataset armlc --frame_path <renamed optical flow path> --num_split 1
+python tools/build_file_list.py --dataset armlc --frame_path <renamed optical flow path> --num_split 1 --out_list_path data/armlc_splits
 ```
 for armlc data, we only perform 1 split, further split strategies will be discussed later.
+use this script to add number of videos to the top of each list file:
 
+```
+for f in $(ls *.txt) ; do NUMBER=$(wc -l $f | awk '{print $1}') ; sed -i "1s/^/$NUMBER\n/" $f ; done 
+
+```
 ### Train the prototype network
 
