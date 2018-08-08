@@ -14,12 +14,12 @@ Use the following script to rename the extracted optical flow directory names
 export OP_DATA_PATH=<directory to the extracted optical flow>
 export RAW_DATA_PATH=<directory to the src data path>
 
-for i in $(find $RAW_DATA_PATH -name *.mp4) ; do
+for i in $(find $RAW_DATA_PATH -name *.mp4 -o -name *.MP4) ; do
 	dirname=$(dirname $i)
 	class_name=${dirname##*/}
 	basename=$(basename $i)
 	echo $class_name
-	mv $OP_DATA_PATH/${basename%.*} $OP_DATA_PATH/$class_name.${basename%.*}
+	sudo mv $OP_DATA_PATH/${basename%.*} $OP_DATA_PATH/$class_name.${basename%.*}
 done
 ```
 
